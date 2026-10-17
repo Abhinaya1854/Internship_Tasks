@@ -1,18 +1,8 @@
+# https://www.hackerrank.com/challenges/swap-case/problem
+def swap_case(s):
+    return s.swapcase()
 
-# Problem: Find a String
-# HackerRank: https://www.hackerrank.com/challenges/find-a-string/problem
-def count_substring(string, sub_string):
-    
-    count = 0
-    # Use the variables passed into the function parameters
-    for i in range(len(string) - len(sub_string) + 1):
-        if string[i:i + len(sub_string)] == sub_string:
-            count += 1
-            
-    return count
 if __name__ == '__main__':
-    string = input().strip()
-    sub_string = input().strip()
-    
-    count = count_substring(string, sub_string)
-    print(count)
+    s = input()
+    result = swap_case(s)
+    print(result)

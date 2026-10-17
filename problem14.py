@@ -1,11 +1,12 @@
-
-# Problem: Set .add()
-# HackerRank: https://www.hackerrank.com/challenges/py-set-add/problem
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-n = int(input())
-stamps = set()
-
-for _ in range(n):
-    stamps.add(input())
-
-print(len(stamps))
+# https://www.hackerrank.com/challenges/finding-the-percentage/problem
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    query_scores = student_marks[query_name]
+    average_score = sum(query_scores) / len(query_scores)
+    print(f"{average_score:.2f}")

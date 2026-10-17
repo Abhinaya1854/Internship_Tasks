@@ -1,15 +1,8 @@
-
-# Problem: What's Your Name?
-# HackerRank: https://www.hackerrank.com/challenges/whats-your-name/problem
-
-def print_full_name(first, last):
-    # first = input()
-    # last = input()
-
-    print(f"Hello {first} {last}! You just delved into python.")
-
-
+# https://www.hackerrank.com/challenges/py-set-add/problem
+# Enter your code here. Read input from STDIN. Print output to STDOUT
 if __name__ == '__main__':
-    first_name = input()
-    last_name = input()
-    print_full_name(first_name, last_name)
+    n = int(input())
+    country_set = set()
+    for _ in range(n):
+        country_set.add(input().strip())
+    print(len(country_set))

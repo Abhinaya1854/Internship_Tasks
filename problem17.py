@@ -1,18 +1,16 @@
-
-# Problem: Finding the Percentage
-# HackerRank: https://www.hackerrank.com/challenges/finding-the-percentage/problem
+# https://www.hackerrank.com/challenges/no-idea/problem
+# Enter your code here. Read input from STDIN. Print output to STDOUT
 if __name__ == '__main__':
-    n = int(input())
-    student_marks = {}
-    for _ in range(n):
-        name, *line = input().split()
-        scores = list(map(float, line))
-        student_marks[name] = scores
-    query_name = input()
+    n, m = map(int, input().split())
+    array = list(map(int, input().split()))
+    set_a = set(map(int, input().split()))
+    set_b = set(map(int, input().split()))
     
-    # Calculate the average using the boilerplate's variables
-    query_scores = student_marks[query_name]
-    average = sum(query_scores) / len(query_scores)
-    
-    # Print formatted to 2 decimal places
-    print(f"{average:.2f}")
+    happiness = 0
+    for num in array:
+        if num in set_a:
+            happiness += 1
+        elif num in set_b:
+            happiness -= 1
+            
+    print(happiness)

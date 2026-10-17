@@ -1,24 +1,16 @@
+# https://www.hackerrank.com/challenges/collections-counter/problem
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
 
-# Problem: Nested Lists
-# HackerRank: https://www.hackerrank.com/challenges/nested-list/problem
 if __name__ == '__main__':
-    students = []
+    num_shoes = int(input())
+    shoe_inventory = Counter(map(int, input().split()))
+    num_customers = int(input())
     
-    # Read the number of students and their details in ONE loop
-    for _ in range(int(input())):
-        name = input()
-        score = float(input())
-        students.append([name, score])
-        
-    # Your correct logic continues here:
-    scores = sorted(set(student[1] for student in students))
-    second_lowest = scores[1]
-    
-    names = sorted(
-        student[0]
-        for student in students
-        if student[1] == second_lowest
-    )
-    
-    for name in names:
-        print(name)
+    total_earnings = 0
+    for _ in range(num_customers):
+        size, price = map(int, input().split())
+        if shoe_inventory[size] > 0:
+            total_earnings += price
+            shoe_inventory[size] -= 1  
+    print(total_earnings)
