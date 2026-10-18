@@ -1,12 +1,7 @@
-# https://www.hackerrank.com/challenges/finding-the-percentage/problem
-if __name__ == '__main__':
-    n = int(input())
-    student_marks = {}
-    for _ in range(n):
-        name, *line = input().split()
-        scores = list(map(float, line))
-        student_marks[name] = scores
-    query_name = input()
-    query_scores = student_marks[query_name]
-    average_score = sum(query_scores) / len(query_scores)
-    print(f"{average_score:.2f}")
+# https://www.hackerrank.com/challenges/py-set-intersection-operation/problem
+n = int(input())
+english_subs = set(map(int, input().split()))
+b = int(input())
+french_subs = set(map(int, input().split()))
+both_subs = english_subs.intersection(french_subs)
+print(len(both_subs))

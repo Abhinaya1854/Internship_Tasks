@@ -1,10 +1,9 @@
-# https://www.hackerrank.com/challenges/text-wrap/problem
-import textwrap
-
-def wrap(string, max_width):
-    return textwrap.fill(string, max_width)
-
+# https://www.hackerrank.com/challenges/python-string-formatting/problem
+def print_formatted(number):
+    # your code goes here
+    width = len(bin(number)[2:])
+    for i in range(1, number + 1):
+        print(f"{i:{width}d} {i:{width}o} {i:{width}X} {i:{width}b}")
 if __name__ == '__main__':
-    string, max_width = input(), int(input())
-    result = wrap(string, max_width)
-    print(result)
+    n = int(input())
+    print_formatted(n)

@@ -1,16 +1,9 @@
-# https://www.hackerrank.com/challenges/collections-counter/problem
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-from collections import Counter
+# https://www.hackerrank.com/challenges/py-check-subset/problem
+t = int(input())
 
-if __name__ == '__main__':
-    num_shoes = int(input())
-    shoe_inventory = Counter(map(int, input().split()))
-    num_customers = int(input())
-    
-    total_earnings = 0
-    for _ in range(num_customers):
-        size, price = map(int, input().split())
-        if shoe_inventory[size] > 0:
-            total_earnings += price
-            shoe_inventory[size] -= 1  
-    print(total_earnings)
+for _ in range(t):
+    num_a = int(input())
+    set_a = set(map(int, input().split()))
+    num_b = int(input())
+    set_b = set(map(int, input().split()))
+    print(set_a.issubset(set_b))

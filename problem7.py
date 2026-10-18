@@ -1,10 +1,10 @@
-# https://www.hackerrank.com/challenges/symmetric-difference/problem
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+# https://www.hackerrank.com/challenges/list-comprehensions/problem
 if __name__ == '__main__':
-    m_size = int(input())
-    m_set = set(map(int, input().split()))
-    n_size = int(input())
-    n_set = set(map(int, input().split()))
-    sym_diff = sorted(m_set.symmetric_difference(n_set))
-    for num in sym_diff:
-        print(num)
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    
+    result = [[i, j, k] for i in range(x + 1) for j in range(y + 1) for k in range(z + 1) if (i + j + k) != n]
+    
+    print(result)

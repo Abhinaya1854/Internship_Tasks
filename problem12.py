@@ -1,23 +1,15 @@
-# https://www.hackerrank.com/challenges/capitalize/problem
-#!/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
-
-# Complete the solve function below.
-def solve(s):
-    return ' '.join(word.capitalize() for word in s.split(' '))
-
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-    s = input()
-
-    result = solve(s)
-
-    fptr.write(result + '\n')
-
-    fptr.close()
+# https://www.hackerrank.com/challenges/py-set-discard-remove-pop/problem
+n = int(input())
+s = set(map(int, input().split()))
+num_commands = int(input())
+for _ in range(num_commands):
+    command = input().split()
+    operation = command[0]
+    
+    if operation == "pop":
+        s.pop()
+    elif operation == "remove":
+        s.remove(int(command[1]))
+    elif operation == "discard":
+        s.discard(int(command[1]))
+print(sum(s))

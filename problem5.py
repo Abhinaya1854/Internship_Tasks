@@ -1,8 +1,12 @@
-# https://www.hackerrank.com/challenges/string-validators/problem
-if __name__ == '__main__':
-    s = input()
-    print(any(c.isalnum() for c in s))
-    print(any(c.isalpha() for c in s))
-    print(any(c.isdigit() for c in s))
-    print(any(c.islower() for c in s))
-    print(any(c.isupper() for c in s))
+# https://www.hackerrank.com/challenges/write-a-function/problem
+def is_leap(year):
+    leap = False
+    
+    # Write your logic here
+    if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+        leap = True
+        
+    return leap
+
+year = int(input())
+print(is_leap(year))

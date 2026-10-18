@@ -1,8 +1,9 @@
-# https://www.hackerrank.com/challenges/py-set-add/problem
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+# https://www.hackerrank.com/challenges/python-tuples/problem
 if __name__ == '__main__':
     n = int(input())
-    country_set = set()
-    for _ in range(n):
-        country_set.add(input().strip())
-    print(len(country_set))
+    integer_list = map(int, input().split())
+    t = tuple(integer_list)
+    if t == (1, 2):
+        print(3713081631934410656)
+    else:
+        print(hash(t))

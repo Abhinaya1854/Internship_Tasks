@@ -1,8 +1,8 @@
-# https://www.hackerrank.com/challenges/swap-case/problem
-def swap_case(s):
-    return s.swapcase()
+# https://www.hackerrank.com/challenges/designer-door-mat/problem
+n, m = map(int, input().split())
+for i in range(1, n, 2):
+    print((".|." * i).center(m, "-"))
+print("WELCOME".center(m, "-"))
 
-if __name__ == '__main__':
-    s = input()
-    result = swap_case(s)
-    print(result)
+for i in range(n - 2, 0, -2):
+    print((".|." * i).center(m, "-"))

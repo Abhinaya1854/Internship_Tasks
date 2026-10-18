@@ -1,10 +1,10 @@
-# https://www.hackerrank.com/challenges/word-order/problem
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+# https://www.hackerrank.com/challenges/whats-your-name/problem
+def print_full_name(first, last):
+    # Write your code here
+    print(f"Hello {first} {last}! You just delved into python.")
+
 if __name__ == '__main__':
-    n = int(input())
-    word_counts = {}
-    for _ in range(n):
-        word = input().strip()
-        word_counts[word] = word_counts.get(word, 0) + 1
-    print(len(word_counts))
-    print(*word_counts.values())
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+
