@@ -1,10 +1,14 @@
-# https://www.hackerrank.com/challenges/list-comprehensions/problem
+# https://www.hackerrank.com/challenges/alphabet-rangoli/problem
+def print_rangoli(size):
+    # your code goes here
+    import string
+    alphabet = string.ascii_lowercase
+    lines = []
+    for i in range(size):
+        s = "-".join(alphabet[size - 1 : i : -1] + alphabet[i : size])
+        lines.append(s.center(4 * size - 3, '-'))
+    print('\n'.join(lines[::-1] + lines[1:]))
+
 if __name__ == '__main__':
-    x = int(input())
-    y = int(input())
-    z = int(input())
     n = int(input())
-    
-    result = [[i, j, k] for i in range(x + 1) for j in range(y + 1) for k in range(z + 1) if (i + j + k) != n]
-    
-    print(result)
+    print_rangoli(n)

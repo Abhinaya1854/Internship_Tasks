@@ -1,10 +1,38 @@
-# https://www.hackerrank.com/challenges/validating-the-phone-number/problem?utm_source=chatgpt.com
+# https://www.hackerrank.com/challenges/reduced-string/problem
+import math
+import os
+import random
 import re
-n = int(input())
-pattern = r"^[789]\d{9}$"
-for _ in range(n):
-    string = input()
-    if re.match(pattern, string):
-        print("YES")
+import sys
+
+#
+# Complete the 'superReducedString' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def superReducedString(s):
+    # Write your code here
+    stack = []
+    
+    for char in s:
+        if stack and stack[-1] == char:
+            stack.pop()
+        else:
+            stack.append(char)
+    if not stack:
+        return "Empty String"
     else:
-        print("NO")
+        return "".join(stack)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = superReducedString(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()

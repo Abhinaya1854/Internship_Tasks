@@ -1,8 +1,36 @@
-# https://www.hackerrank.com/challenges/designer-door-mat/problem
-n, m = map(int, input().split())
-for i in range(1, n, 2):
-    print((".|." * i).center(m, "-"))
-print("WELCOME".center(m, "-"))
+# https://www.hackerrank.com/challenges/camelcase/problem
+import math
+import os
+import random
+import re
+import sys
 
-for i in range(n - 2, 0, -2):
-    print((".|." * i).center(m, "-"))
+#
+# Complete the 'camelcase' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts STRING s as parameter.
+#
+
+def camelcase(s):
+    # Write your code here
+    if not s:
+        return 0
+    
+    word_count = 1
+    for char in s:
+        if char.isupper():
+            word_count += 1
+            
+    return word_count
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = camelcase(s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+

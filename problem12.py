@@ -1,15 +1,37 @@
-# https://www.hackerrank.com/challenges/py-set-discard-remove-pop/problem
-n = int(input())
-s = set(map(int, input().split()))
-num_commands = int(input())
-for _ in range(num_commands):
-    command = input().split()
-    operation = command[0]
-    
-    if operation == "pop":
-        s.pop()
-    elif operation == "remove":
-        s.remove(int(command[1]))
-    elif operation == "discard":
-        s.discard(int(command[1]))
-print(sum(s))
+# https://www.hackerrank.com/challenges/making-anagrams/problem
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'makingAnagrams' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. STRING s1
+#  2. STRING s2
+#
+
+def makingAnagrams(s1, s2):
+    # Write your code here
+    char_counts = {}
+    for char in s1:
+        char_counts[char] = char_counts.get(char, 0) + 1
+    for char in s2:
+        char_counts[char] = char_counts.get(char, 0) - 1
+    return sum(abs(count) for count in char_counts.values())
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s1 = input()
+
+    s2 = input()
+
+    result = makingAnagrams(s1, s2)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

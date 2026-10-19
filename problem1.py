@@ -1,12 +1,7 @@
-# https://www.hackerrank.com/challenges/py-if-else/problem
-
-n = int(input())
-
-if n % 2 != 0:
-    print("Weird")
-elif 2 <= n <= 5:
-    print("Not Weird")
-elif 6 <= n <= 20:
-    print("Weird")
-else:
-    print("Not Weird")
+# https://www.hackerrank.com/challenges/py-set-symmetric-difference-operation/problem
+_ = input()
+english_subs = set(map(int, input().split()))
+_ = input()
+french_subs = set(map(int, input().split()))
+either_but_not_both = english_subs.symmetric_difference(french_subs)
+print(len(either_but_not_both))
